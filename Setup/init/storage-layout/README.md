@@ -3,13 +3,13 @@
 新机开发布局。只创建 `layout.txt` 内的高频开发与日常软件目录；不会移动文件、安装软件、创建个人项目与数据目录、配置用户目录重定向或执行 Git 操作。
 
 ```powershell
-.\Setup\init\storage-layout\windows.ps1
+.\setup\scripts\windows\01-storage-layout.ps1
 ```
 
 直接粘贴根目录路径，例如 `E:\`，不加引号。脚本会循环校验路径、显示将创建的目录；输入完整 `yes` 后才开始创建。预览：
 
 ```powershell
-.\Setup\init\storage-layout\windows.ps1 -WhatIf
+.\setup\scripts\windows\01-storage-layout.ps1 -WhatIf
 ```
 
 ## 目标目录树
@@ -22,7 +22,7 @@
 │   ├── AI/chatbox/
 │   ├── Communication/{QQ, Weixin}/
 │   ├── Development/
-│   │   ├── Toolchains/{CMake, Git, Go, Node.js, Python, msys2}/
+│   │   ├── Toolchains/{CMake, Git, Go, Node.js, NodeGlobal, Python, msys2}/
 │   │   ├── Editors/{Neovim, Visual_Studio_Code}/
 │   │   ├── IDEs/CLion/
 │   │   └── Tools/{Apifox, CC_Switch, GitHub_Copilot, PipPal}/
@@ -32,14 +32,14 @@
 │   ├── Media/VLC/
 │   ├── Networking/{Clash_Verge, Xftp}/
 │   ├── Notes/Obsidian/
-│   ├── Security/{HuoRong, Proton_Authenticator}/
+│   ├── Security/{HuoRong, Proton_Authenticator, VeraCrypt}/
 │   └── System/{Geek, Lenovo}/
 ├── Assets/
 │   ├── Fonts/{JetBrainsMono-2.304, JetBrainsMonoNerd}/
 │   ├── Records/{QQ, Weixin}/
 │   └── Databases/
 ├── Cache/
-│   ├── go/{build, gopath}/
+│   ├── go/{build, gopath/{bin, pkg}}/
 │   ├── npm/
 │   ├── pip/
 │   └── tmp/

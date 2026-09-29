@@ -10,7 +10,11 @@ function Confirm-SetupAction {
         Write-Host 'WhatIf: no changes made.' -ForegroundColor Yellow
         return $false
     }
-    return (Read-Host 'Continue? Type yes') -ceq 'yes'
+    while ($true) {
+        $answer = Read-Host 'Continue? Type yes / y'
+        if ($answer -cin @('yes', 'Yes', 'YES', 'y', 'Y')) { return $true }
+        Write-Host 'Confirmation not accepted. Enter yes / Yes / YES / y / Y.' -ForegroundColor Yellow
+    }
 }
 
 function Get-SetupManifest {
@@ -23,13 +27,44 @@ function Get-SetupManifest {
 function Read-SetupDirectory {
     param(
         [Parameter(Mandatory)][string]$Label,
-        [string]$Value
+        [string]$Value,
+        [string]$Example
     )
 
-    if (-not $Value) { $Value = Read-Host "Paste $Label path" }
-    $Value = $Value.Trim().Trim('"')
-    if (-not (Test-Path -LiteralPath $Value -PathType Container)) {
-        throw "Directory not found: $Value"
+    while ($true) {
+        if (-not $Value) {
+            $prompt = "Paste $Label path"
+            if ($Example) { $prompt += " (example: $Example)" }
+            $Value = Read-Host $prompt
+        }
+        $Value = $Value.Trim().Trim('"')
+        if (Test-Path -LiteralPath $Value -PathType Container) {
+            return (Resolve-Path -LiteralPath $Value).Path
+        }
+        Write-Host "Directory not found: $Value" -ForegroundColor Yellow
+        $Value = $null
     }
-    return (Resolve-Path -LiteralPath $Value).Path
+}
+
+function Read-OptionalSetupDirectory {
+    param(
+        [Parameter(Mandatory)][string]$Label,
+        [string]$Value,
+        [string]$Example
+    )
+
+    while ($true) {
+        if ($null -eq $Value) {
+            $prompt = "Paste $Label path, or press Enter to skip"
+            if ($Example) { $prompt += " (example: $Example)" }
+            $Value = Read-Host $prompt
+        }
+        $Value = $Value.Trim().Trim('"')
+        if (-not $Value) { return $null }
+        if (Test-Path -LiteralPath $Value -PathType Container) {
+            return (Resolve-Path -LiteralPath $Value).Path
+        }
+        Write-Host "Directory not found: $Value" -ForegroundColor Yellow
+        $Value = $null
+    }
 }

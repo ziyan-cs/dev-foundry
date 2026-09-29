@@ -1,4 +1,4 @@
-# Relative to the selected Windows storage root.
+# Relative to the selected Windows workspace root.
 Apps/Development/Toolchains
 Apps/Development/Editors
 Apps/Development/IDEs
@@ -10,6 +10,7 @@ Apps/Development/Toolchains/CMake
 Apps/Development/Toolchains/Git
 Apps/Development/Toolchains/Go
 Apps/Development/Toolchains/Node.js
+Apps/Development/Toolchains/NodeGlobal
 Apps/Development/Toolchains/Python
 Apps/Development/Toolchains/msys2
 Apps/Development/Editors/Neovim
@@ -32,6 +33,7 @@ Apps/Networking/Xftp
 Apps/Notes/Obsidian
 Apps/Security/HuoRong
 Apps/Security/Proton_Authenticator
+Apps/Security/VeraCrypt
 Apps/System/Geek
 Apps/System/Lenovo
 Assets/Fonts
@@ -42,6 +44,8 @@ Assets/Records/QQ
 Assets/Records/Weixin
 Cache/go/build
 Cache/go/gopath
+Cache/go/gopath/bin
+Cache/go/gopath/pkg
 Cache/npm
 Cache/pip
 Cache/tmp

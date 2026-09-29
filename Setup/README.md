@@ -11,3 +11,5 @@
 | Windows storage layout | [init/storage-layout/README.md](init/storage-layout/README.md) |
 
 `manifests/` 是工具与扩展清单；`scripts/` 不写入 Git 身份、SSH 密钥、代理、磁盘、网络或 shell 配置。
+
+Windows 的 `02-add-path.ps1` 同时维护 User PATH，并在 Node.js、`Toolchains/NodeGlobal` 与 `Cache/npm` 均存在时，将 npm global prefix 与 cache 分别配置到 `NodeGlobal`、`Cache/npm`。
