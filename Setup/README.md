@@ -8,5 +8,6 @@
 | Arch on VMware: ISO → dev / SSH | [guides/arch-vmware.md](guides/arch-vmware.md) |
 | Arch development tools | [guides/arch.md](guides/arch.md) |
 | Ubuntu / Debian development tools | [guides/ubuntu.md](guides/ubuntu.md) |
+| Windows storage layout | [init/storage-layout/README.md](init/storage-layout/README.md) |
 
 `manifests/` 是工具与扩展清单；`scripts/` 不写入 Git 身份、SSH 密钥、代理、磁盘、网络或 shell 配置。
