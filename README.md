@@ -22,7 +22,7 @@
 | `01` | workspace root，例如 `E:\` |
 | `02` | workspace root；MySQL Shell `bin` 路径可跳过 |
 | `03` | MSYS2 root |
-| `04` | — |
+| `04` | uv 安装目录，例如 `E:\Apps\Development\Tools\uv` |
 | `05` | Go `bin`、GOPATH、GOCACHE |
 | `06` | VS Code 安装根目录 |
 

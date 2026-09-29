@@ -16,12 +16,19 @@
 .\setup\scripts\windows\03-msys2-tools.ps1
 ```
 
-Python、Go 已可运行后：
+Python 已可运行后：
 
 ```powershell
 .\setup\scripts\windows\04-install-uv.ps1
+```
+
+Go 已可运行后：
+
+```powershell
 .\setup\scripts\windows\05-go-tools.ps1
 ```
+
+`04` 粘贴 uv 安装目录（如 `E:\Apps\Development\Tools\uv`）；其 PATH 由 `02` 统一管理。
 
 VS Code 安装完成后，粘贴其安装根目录：
 

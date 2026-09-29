@@ -23,9 +23,9 @@
 │   ├── Communication/{QQ, Weixin}/
 │   ├── Development/
 │   │   ├── Toolchains/{CMake, Git, Go, Node.js, NodeGlobal, Python, msys2}/
-│   │   ├── Editors/{Neovim, Visual_Studio_Code}/
+│   │   ├── Editors/{Neovim, VS_Code}/
 │   │   ├── IDEs/CLion/
-│   │   └── Tools/{Apifox, CC_Switch, GitHub_Copilot, PipPal}/
+│   │   └── Tools/{Apifox, CC_Switch, GitHub_Copilot, PipPal, uv}/
 │   ├── Diagnostics/{CPU-Z, CrystalDiskInfo, GPU-Z, HWiNFO64}/
 │   ├── Files/{7-Zip, Everything}/
 │   ├── Gaming/Steam/

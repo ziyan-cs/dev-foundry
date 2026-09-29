@@ -9,7 +9,7 @@ mingw-w64-ucrt-x86_64-ripgrep
 mingw-w64-ucrt-x86_64-fd
 mingw-w64-ucrt-x86_64-jq
 mingw-w64-ucrt-x86_64-yq
-mingw-w64-ucrt-x86_64-tree
+tree
 coreutils
 grep
 sed

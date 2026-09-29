@@ -12,6 +12,7 @@ $relativeEntries = @(
     'Apps\Development\Toolchains\CMake\bin',
     'Apps\Development\Toolchains\Node.js',
     'Apps\Development\Toolchains\NodeGlobal',
+    'Apps\Development\Tools\uv',
     'Apps\Development\Toolchains\Python\Scripts',
     'Apps\Development\Toolchains\Python',
     'Apps\Development\Toolchains\Go\bin',
@@ -20,7 +21,7 @@ $relativeEntries = @(
 $postMySqlEntries = @(
     'Apps\Development\Toolchains\msys2\ucrt64\bin',
     'Apps\Development\Editors\Neovim\bin',
-    'Apps\Development\Editors\Visual_Studio_Code\bin',
+    'Apps\Development\Editors\VS_Code\bin',
     'Apps\Development\IDEs\CLion\bin'
 )
 $MySqlShellBin = Read-OptionalSetupDirectory 'MySQL Shell bin' $MySqlShellBin 'C:\Program Files\MySQL\MySQL Shell 8.0\bin'
@@ -63,11 +64,13 @@ $managedPathPatterns = @(
     '[\\/]Git[\\/](cmd|bin)$',
     '[\\/]CMake[\\/]bin$',
     '[\\/]Node\.js$',
+    '[\\/]Tools[\\/]uv$',
     '[\\/]Python(?:\d+(?:\.\d+)?)?(?:[\\/]Scripts)?$',
     '[\\/]Go[\\/]bin$',
     '[\\/]gopath[\\/]bin$',
     '[\\/]msys2[\\/](ucrt64|usr)[\\/]bin$',
     '[\\/]Neovim[\\/]bin$',
+    '[\\/]VS_Code[\\/]bin$',
     '[\\/]Visual_Studio_Code[\\/]bin$',
     '[\\/]Visual Studio Code[\\/]bin$',
     '[\\/]CLion[^\\/]*[\\/]bin$',

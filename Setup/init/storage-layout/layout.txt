@@ -14,12 +14,13 @@ Apps/Development/Toolchains/NodeGlobal
 Apps/Development/Toolchains/Python
 Apps/Development/Toolchains/msys2
 Apps/Development/Editors/Neovim
-Apps/Development/Editors/Visual_Studio_Code
+Apps/Development/Editors/VS_Code
 Apps/Development/IDEs/CLion
 Apps/Development/Tools/Apifox
 Apps/Development/Tools/CC_Switch
 Apps/Development/Tools/GitHub_Copilot
 Apps/Development/Tools/PipPal
+Apps/Development/Tools/uv
 Apps/Files/7-Zip
 Apps/Files/Everything
 Apps/Diagnostics/CPU-Z
