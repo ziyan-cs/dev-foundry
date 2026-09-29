@@ -1,0 +1,161 @@
+{
+    // ─── 编辑器 ──────────────────────────────────────────────────
+    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 1.5,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.rulers": [
+        100,
+        120
+    ],
+    "editor.renderWhitespace": "trailing",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.tabCompletion": "on",
+    "editor.suggest.preview": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.parameterHints.delay": 100,
+    "editor.formatOnSave": true,
+    // ─── 文件 ────────────────────────────────────────────────────
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.tpp": "cpp",
+        "*.ipp": "cpp",
+        "*.inl": "cpp"
+    },
+    // ─── C / C++ ─────────────────────────────────────────────────
+    // clangd: 补全 / 跳转 / 诊断 / clang-tidy
+    // 编译器选择交给 Task / CMake, 不在此写死
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=never"
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    // ─── CMake ───────────────────────────────────────────────────
+    "cmake.configureOnOpen": true,
+    "cmake.showNotAllDocumentsSavedQuestion": false,
+    // ─── Python ──────────────────────────────────────────────────
+    // Pylance: 语言服务
+    // Ruff: Format / Lint / Import
+    // uv: 项目、环境与依赖 (不在 VS Code 全局写路径)
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoImportCompletions": true,
+    "python.terminal.activateEnvironment": true,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    // ─── Go ──────────────────────────────────────────────────────
+    // gopls 负责补全、诊断、格式化
+    // staticcheck / go vet 留给 CLI 与 CI
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    // ─── 竞赛 CPH ────────────────────────────────────────────────
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.hideStderrorWhenCompiledOK": true,
+    // ─── Terminal ─────────────────────────────────────────────────
+    "terminal.integrated.fontFamily": "JetBrains Mono, monospace",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.scrollback": 5000,
+    // ─── 搜索 ────────────────────────────────────────────────────
+    "search.exclude": {
+        "**/.git": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.mypy_cache": true,
+        "**/.venv": true
+    },
+    // ─── Git ─────────────────────────────────────────────────────
+    "git.autofetch": true,
+    "git.openRepositoryInParentFolders": "never",
+    "git.blame.statusBarItem.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    // ─── GitLens ─────────────────────────────────────────────────
+    "gitlens.codeLens.enabled": false,
+    // ─── Copilot ─────────────────────────────────────────────────
+    // 如果完全不用 Copilot, 最好直接禁用扩展;
+    // 保留这一条可确保即使扩展启用也不会自动补全
+    "github.copilot.enable": {
+        "*": false
+    },
+    // ─── Vim ─────────────────────────────────────────────────────
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.sneak": true,
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-e>": false,
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-v>": false
+    },
+    // ─── Remote SSH ──────────────────────────────────────────────
+    "remote.SSH.remotePlatform": {
+        "vm-ubuntu": "linux",
+        "vm-arch": "linux"
+    },
+    // ─── Explorer / Workspace ────────────────────────────────────
+    "explorer.confirmDelete": true,
+    "explorer.confirmDragAndDrop": false,
+    "window.menuBarVisibility": "compact",
+    "workbench.startupEditor": "none",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.iconTheme": "material-icon-theme",
+    // ─── Claude / Chat ───────────────────────────────────────────
+    "claudeCode.preferredLocation": "panel",
+    "chat.viewSessions.orientation": "stacked",
+    // 中文源码 / 注释不提示普通非 ASCII 字符
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "security.workspace.trust.untrustedFiles": "open"
+}

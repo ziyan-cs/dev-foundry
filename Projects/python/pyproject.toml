@@ -1,0 +1,165 @@
+# ─── 项目基础 ──────────────────────────────────────────────────
+[project]
+name = "project-name"
+version = "0.1.0"
+description = "Python project template managed by uv"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[project.scripts]
+project-name = "project_name.main:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.12",
+]
+
+# ─── Ruff 基础 ─────────────────────────────────────────────────
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+indent-width = 4
+
+src = ["src"]
+
+exclude = [
+    ".git",
+    ".idea",
+    ".vscode",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
+    "build",
+    "dist",
+]
+
+# ─── Ruff Formatter ────────────────────────────────────────────
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+skip-magic-trailing-comma = false
+docstring-code-format = true
+docstring-code-line-length = 100
+
+# ─── Ruff Lint ─────────────────────────────────────────────────
+[tool.ruff.lint]
+select = [
+    # Pycodestyle
+    "E",
+    "W",
+
+    # Pyflakes
+    "F",
+
+    # isort
+    "I",
+
+    # Naming conventions
+    "N",
+
+    # Pyupgrade
+    "UP",
+
+    # flake8-bugbear
+    "B",
+
+    # flake8-simplify
+    "SIM",
+
+    # flake8-comprehensions
+    "C4",
+
+    # flake8-return
+    "RET",
+
+    # flake8-pie
+    "PIE",
+
+    # flake8-pytest-style
+    "PT",
+
+    # flake8-unused-arguments
+    "ARG",
+
+    # Ruff-specific rules
+    "RUF",
+]
+
+ignore = [
+    # Formatter handles line length.
+    "E501",
+
+    # Sometimes an explicit else improves control-flow readability.
+    "RET505",
+    "RET506",
+
+    # Can become unnecessarily aggressive in normal application code.
+    "SIM108",
+
+    # Mutable class attributes can be legitimate.
+    "RUF012",
+]
+
+fixable = ["ALL"]
+unfixable = []
+
+# ─── Import 排序 ───────────────────────────────────────────────
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = ["project_name"]
+
+# ─── 命名规则 ─────────────────────────────────────────────────
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = ["classmethod"]
+staticmethod-decorators = ["staticmethod"]
+
+# ─── Pytest 风格 ───────────────────────────────────────────────
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+# ─── 每文件例外 ────────────────────────────────────────────────
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "ARG001",
+    "ARG002",
+]
+"src/**/__init__.py" = [
+    "F401",
+]
+
+# ─── Pytest ────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+]
+
+# ─── Coverage（安装 pytest-cov 后启用）────────────────────────
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+precision = 2
